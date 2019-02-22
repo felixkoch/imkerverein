@@ -1,3 +1,11 @@
+let activeEnv = process.env.ACTIVE_ENV || process.env.NODE_ENV || "development"
+
+console.log(`Using environment config: '${activeEnv}'`)
+
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -34,7 +42,7 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `your_space_id`,
+        spaceId: `d4jgu6t6omnl`,
         // Learn about environment variables: https://gatsby.app/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
