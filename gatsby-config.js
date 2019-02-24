@@ -46,6 +46,8 @@ module.exports = {
         // Learn about environment variables: https://gatsby.app/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
-    }
+      
+    },
+    `@contentful/gatsby-transformer-contentful-richtext`
   ],
 }
