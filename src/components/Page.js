@@ -5,7 +5,8 @@ const Page = ({ children, data }) => (
   <div>
     {data.contentfulPage.title}
     <br />
-    {data.contentfulPage.body.childContentfulRichText.html}
+    <div dangerouslySetInnerHTML={{__html: data.contentfulPage.body.childContentfulRichText.html}}/>;
+    
   </div>
 )
 
