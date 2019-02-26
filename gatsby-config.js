@@ -1,3 +1,6 @@
+const { BLOCKS, MARKS, INLINES } = require('@contentful/rich-text-types')
+
+
 let activeEnv = process.env.ACTIVE_ENV || process.env.NODE_ENV || "development"
 
 console.log(`Using environment config: '${activeEnv}'`)
@@ -48,6 +51,39 @@ module.exports = {
       },
       
     },
-    `@contentful/gatsby-transformer-contentful-richtext`
+
+    {
+      resolve: '@contentful/gatsby-transformer-contentful-richtext',
+      options: {
+        renderOptions: {
+          /*
+           * Defines custom html string for each node type like heading, embedded entries etc..
+           */
+          renderNode: {
+            // Example
+            [INLINES.ASSET_HYPERLINK]: node => {
+              return `<img class='custom-asset' src="${
+                node.data.target.fields.file['en-US'].url
+              }"/>`
+            },
+            
+            [BLOCKS.EMBEDDED_ASSET]: node => {
+              return `<img class='custom-asset' src="${
+                node.data.target.fields.file['en-US'].url
+              }"/>`
+            },
+            
+            [INLINES.EMBEDDED_ENTRY]: node => {
+              return `<div class='custom-entry' />${
+                node.data.target.fields.name['en-US']
+              }</div>`
+            },
+          },
+        },
+      },
+    },
+
+
+
   ],
 }
