@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
+import StaticImage from "./FixedImage";
 
 const Page = ({ children, data }) => (
   <div>
@@ -23,7 +24,7 @@ const Page = ({ children, data }) => (
     </Helmet>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="#">
-      🐝 Freizeitimker Wümme-Region e.V.
+      <StaticImage name='logo.png' width='80' /> Freizeitimker Wümme-Region e.V.
       </a>
       <button
         className="navbar-toggler"
