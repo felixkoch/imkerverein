@@ -5,7 +5,9 @@ import StaticImage from "./FixedImage";
 
 const Page = ({ children, data }) => (
   <div>
-
+    <Helmet>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    </Helmet>
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <a className="navbar-brand" href="#">
       {/*<StaticImage name='logo.png' width='80' />*/} Freizeitimker Wümme-Region e.V.
