@@ -2,46 +2,21 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import StaticImage from "./FixedImage";
+import Logo from "./Logo";
 
 const Page = ({ children, data }) => (
   <div>
     <Helmet>
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet" />
     </Helmet>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-      {/*<StaticImage name='logo.png' width='80' />*/} Freizeitimker Wümme-Region e.V.
-      </a>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon" />
-      </button>
 
-      <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">
-              Home <span className="sr-only">(current)</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Link
-            </a>
-          </li>
-
-        </ul>
+    <div className="container header">
+      <div class="row">
+        <div class="col-2"><Logo /></div>
+        <div class="col-8">Freizeitimker Wümme-Region e.V.</div>
+        <div class="col-2">Menü</div>
       </div>
-    </nav>
-
-    <div className='container' style={{backgroundColor:'red'}}>test</div>
+    </div>
 
     <div>
       {data.contentfulPage.title}
@@ -53,7 +28,6 @@ const Page = ({ children, data }) => (
       />
       ;
     </div>
-
   </div>
 );
 
