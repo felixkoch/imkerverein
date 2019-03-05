@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import StaticImage from "./FixedImage";
 import Logo from "./Logo";
+import $ from "jquery";
 
 const Page = ({ children, data }) => (
   <div>
@@ -11,7 +12,50 @@ const Page = ({ children, data }) => (
         href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
         rel="stylesheet"
       />
+
+      <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"
+      />
     </Helmet>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        Navbar
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon" />
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+              Home <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              Link
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">
+              Disabled
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <div className="container header">
       <div class="row">
