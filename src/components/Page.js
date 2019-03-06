@@ -3,7 +3,16 @@ import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import StaticImage from "./FixedImage";
 import Logo from "./Logo";
-import $ from "jquery";
+import 'jquery/dist/jquery.min.js'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+
+/*
+sanity io
+product hunt
+google fonts
+work sans
+montserrat
+*/
 
 const Page = ({ children, data }) => (
   <div>
@@ -11,12 +20,6 @@ const Page = ({ children, data }) => (
       <link
         href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
         rel="stylesheet"
-      />
-
-      <script
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"
       />
     </Helmet>
 
@@ -57,15 +60,6 @@ const Page = ({ children, data }) => (
       </div>
     </nav>
 
-    <div className="container header">
-      <div class="row">
-        <div class="col-2">
-          <Logo />
-        </div>
-        <div class="col-8">Freizeitimker Wümme-Region e.V.</div>
-        <div class="col-2">Menü</div>
-      </div>
-    </div>
 
     <div className="container">
       <div class="row justify-content-md-center">
