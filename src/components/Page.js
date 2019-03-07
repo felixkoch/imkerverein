@@ -3,9 +3,9 @@ import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import StaticImage from "./FixedImage";
 import Logo from "./Logo";
-import 'jquery/dist/jquery.min.js'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-
+import "jquery/dist/jquery.min.js";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import logo from "../images/logo.png";
 /*
 sanity io
 product hunt
@@ -23,9 +23,9 @@ const Page = ({ children, data }) => (
       />
     </Helmet>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg  ">
       <a class="navbar-brand" href="#">
-        Navbar
+        Freizeitimker Wümme-Region e.V.
       </a>
       <button
         class="navbar-toggler"
@@ -43,70 +43,43 @@ const Page = ({ children, data }) => (
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
             <a class="nav-link" href="#">
-              Home <span class="sr-only">(current)</span>
+              Neuigkeiten
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              Link
+              Verein
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">
-              Disabled
+            <a class="nav-link Kontakt" href="#">
+              KOntakt
             </a>
           </li>
         </ul>
       </div>
     </nav>
 
-
     <div className="container">
-      <div class="row justify-content-md-center">
-        <div className="col-8">
-          Lorem ipsum dolor amet stumptown gastropub taiyaki sriracha austin,
-          normcore mumblecore. Before they sold out pok pok direct trade, tofu
-          tbh locavore cornhole pour-over street art. Cold-pressed farm-to-table
-          quinoa gochujang, single-origin coffee coloring book cardigan
-          williamsburg seitan deep v. Mumblecore lyft jean shorts sriracha
-          crucifix asymmetrical succulents hot chicken aesthetic fam jianbing.
-          Meh neutra pop-up kinfolk, intelligentsia chambray whatever direct
-          trade gentrify tilde jianbing pabst celiac bushwick normcore. Craft
-          beer readymade intelligentsia, ennui asymmetrical mustache tofu
-          succulents poutine truffaut forage. Everyday carry pabst pour-over
-          neutra, unicorn kale chips heirloom fingerstache. Pour-over hexagon
-          tumeric twee vice, offal occupy man braid butcher thundercats shabby
-          chic fixie stumptown hashtag. Shoreditch hoodie 8-bit umami vinyl
-          meditation narwhal mumblecore. Taxidermy umami chia 90's single-origin
-          coffee typewriter man bun coloring book tacos flexitarian shoreditch.
-          Seitan shoreditch bespoke, wolf tbh raclette austin hammock chambray 3
-          wolf moon. Fam everyday carry ethical typewriter +1 food truck
-          gentrify forage heirloom 3 wolf moon aesthetic franzen shabby chic.
-          Neutra adaptogen af, selfies lo-fi master cleanse direct trade
-          scenester jianbing fashion axe raclette edison bulb 3 wolf moon
-          waistcoat. Knausgaard man braid chambray, ugh locavore plaid kinfolk
-          vinyl hashtag copper mug squid hot chicken lyft. Ugh pork belly
-          chicharrones austin before they sold out gluten-free heirloom fixie
-          bicycle rights banh mi seitan drinking vinegar tilde typewriter shabby
-          chic. Portland shabby chic ramps meggings hoodie locavore selfies
-          ethical church-key occupy coloring book hammock banh mi cloud bread
-          intelligentsia. Normcore affogato fixie gochujang, health goth
-          activated charcoal food truck flexitarian. Cronut tbh chicharrones man
-          braid activated charcoal. Blog tote bag bicycle rights sustainable,
-          pop-up narwhal 8-bit unicorn brunch vegan single-origin coffee. Banjo
-          selvage hashtag twee kale chips XOXO +1 echo park bitters slow-carb
-          tousled man braid keytar vice austin. Wayfarers pug franzen paleo
-          salvia, flexitarian bespoke af keffiyeh raclette live-edge tacos.
-          Meditation post-ironic fam irony schlitz, YOLO kitsch bitters. Man
-          braid ugh semiotics squid green juice mixtape lyft umami vice.
-          Gluten-free viral street art cornhole neutra literally gochujang
-          chambray snackwave activated charcoal. Letterpress pop-up tofu
-          gentrify meggings jean shorts single-origin coffee tbh mustache
-          cornhole art party vice.
+      <div className="d-md-flex flex-row-reverse">
+        <div className="p-4 text-center">
+          <img src={logo} />
+        </div>
+        <div className="p-4">
+          <h1 className="hero">Freizeitimker Wümme-Region e.V.</h1>
         </div>
       </div>
     </div>
-
+    <div className="footer">
+      <ul>
+        <li>
+          <a href="#">Datenschutz</a>
+        </li>
+        <li>
+          <a href="#">Impressum</a>
+        </li>
+      </ul>
+    </div>
     {/*}
     <div>
       {data.contentfulPage.title}

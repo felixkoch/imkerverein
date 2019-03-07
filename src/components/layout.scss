@@ -1,4 +1,6 @@
+$primary: #ff4433;
 $font-family-sans-serif: 'Roboto', sans-serif;
+$body-color:#000;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
@@ -12,4 +14,26 @@ body {
     color: #d25349;
     padding-top:20px;
     text-transform: uppercase;
+}
+
+h1.hero {
+    font-weight: 900;
+    font-size: 8vw;
+    line-height: 1;
+}
+
+.footer {
+    background: $primary;
+    padding:20px;
+    margin-top:200px;
+
+    
+
+    ul {
+    list-style-type: none;
+    }
+
+    a {
+    color:white;
+    }
 }
