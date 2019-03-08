@@ -1,39 +1,58 @@
 $primary: #ff4433;
-$font-family-sans-serif: 'Roboto', sans-serif;
-$body-color:#000;
+$font-family-sans-serif: "Roboto", sans-serif;
+$body-color: #000;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 body {
-    //background:red;
+  //background:red;
 }
 
-.header {
-    font-weight: 400;
-    font-size:20px;
-    color: #d25349;
-    padding-top:20px;
-    text-transform: uppercase;
+.navbar img.logo {
+  width: 60px;
 }
 
 h1.hero {
-    font-weight: 900;
-    font-size: 8vw;
-    line-height: 1;
+  font-weight: 900;
+  font-size: 8vw;
+  line-height: 1;
 }
 
 .footer {
-    background: $primary;
-    padding:20px;
-    margin-top:200px;
+  background: $primary;
+  margin-top: 200px;
 
-    
-
-    ul {
+  ul {
     list-style-type: none;
-    }
+    padding:0;
+  }
 
-    a {
-    color:white;
-    }
+  a {
+    color: white;
+  }
 }
+
+a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    visibility: visible;
+  }
+
+  a:before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    //visibility: hidden;
+    transition: all 0.5s linear;
+   
+  }
+
+  a:hover:before {
+    visibility: visible;
+    width:100%;
+  }

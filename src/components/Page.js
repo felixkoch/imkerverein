@@ -23,9 +23,9 @@ const Page = ({ children, data }) => (
       />
     </Helmet>
 
-    <nav class="navbar navbar-expand-lg  ">
+    <nav class="navbar navbar-expand-lg  mb-5">
       <a class="navbar-brand" href="#">
-        Freizeitimker Wümme-Region e.V.
+        <img src={logo} className="logo" />
       </a>
       <button
         class="navbar-toggler"
@@ -53,33 +53,61 @@ const Page = ({ children, data }) => (
           </li>
           <li class="nav-item">
             <a class="nav-link Kontakt" href="#">
-              KOntakt
+              Kontakt
             </a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <div className="container">
+    <div className="container mb-5">
       <div className="d-md-flex flex-row-reverse">
-        <div className="p-4 text-center">
+        <div className="text-center">
           <img src={logo} />
         </div>
-        <div className="p-4">
+        <div className="">
           <h1 className="hero">Freizeitimker Wümme-Region e.V.</h1>
         </div>
       </div>
     </div>
-    <div className="footer">
-      <ul>
-        <li>
-          <a href="#">Datenschutz</a>
-        </li>
-        <li>
-          <a href="#">Impressum</a>
-        </li>
-      </ul>
+
+    <div className="container mb-5">
+      <form class="form-inline">
+        <div class="form-group mr-3">
+          <input
+            type="email"
+            class="form-control form-control-lg"
+            placeholder="E-Mail"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">
+          Zum Newsletter anmelden
+        </button>
+      </form>
     </div>
+
+    <div className="container">
+      <h2>Neuigkeiten</h2>
+      <h3>Einladung zum Klönabend im Januar</h3>
+      <p>
+        dfasdfa ads fsad fadsf asdf sadf asdfdsf sadf asd f sdf a dsf sadf af
+        dsfasdf asdf asdf
+      </p>
+    </div>
+
+    <div className="footer pt-3 pb-3">
+      <div className="container">
+        <ul>
+          <li>
+            <a href="#">Datenschutz</a>
+          </li>
+          <li>
+            <a href="#">Impressum</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     {/*}
     <div>
       {data.contentfulPage.title}
