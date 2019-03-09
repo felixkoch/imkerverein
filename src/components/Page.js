@@ -12,6 +12,10 @@ product hunt
 google fonts
 work sans
 montserrat
+farbig markieren
+prefetch
+scrollspy
+cookie hinweis
 */
 
 const Page = ({ children, data }) => (
@@ -23,23 +27,12 @@ const Page = ({ children, data }) => (
       />
     </Helmet>
 
-    <nav class="navbar navbar-expand-lg  mb-5">
+    <nav class="navbar navbar-expand  mb-5">
       <a class="navbar-brand" href="#">
         <img src={logo} className="logo" />
       </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon" />
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <div class="collapse navbar-collapse fancylinks">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
             <a class="nav-link" href="#">
@@ -95,7 +88,7 @@ const Page = ({ children, data }) => (
       </p>
     </div>
 
-    <div className="footer pt-3 pb-3">
+    <div className="footer pt-3 pb-3 fancylinks">
       <div className="container">
         <ul>
           <li>

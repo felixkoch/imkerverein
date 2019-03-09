@@ -14,8 +14,34 @@ body {
 
 h1.hero {
   font-weight: 900;
-  font-size: 8vw;
+  //font-size: 8vw;
   line-height: 1;
+  color:yellow;
+}
+
+@include media-breakpoint-up(sm) {
+  h1.hero {
+    font-size: 8vw;
+    color:blue;
+  }
+}
+@include media-breakpoint-up(md) {
+  h1.hero {
+    font-size: 8vw;
+    color:green;
+  }
+}
+@include media-breakpoint-up(lg) {
+  h1.hero {
+    font-size: 90px;
+    color:red;
+  }
+}
+@include media-breakpoint-up(xl) {
+  h1.hero {
+    font-size: 100px;
+    color:black;
+  }
 }
 
 .footer {
@@ -24,7 +50,7 @@ h1.hero {
 
   ul {
     list-style-type: none;
-    padding:0;
+    padding: 0;
   }
 
   a {
@@ -32,27 +58,46 @@ h1.hero {
   }
 }
 
-a {
+.fancylinks {
+  a {
     position: relative;
-    color: #000;
     text-decoration: none;
-    visibility: visible;
   }
 
   a:before {
     content: "";
     position: absolute;
-    width: 50%;
-    height: 2px;
+    width: 0%;
+    height: 4px;
     bottom: 0;
     left: 0;
-    background-color: #000;
-    //visibility: hidden;
-    transition: all 0.5s linear;
-   
+    background-color: $primary;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
   }
 
   a:hover:before {
     visibility: visible;
-    width:100%;
+    width: 100%;
   }
+}
+
+nav .fancylinks {
+  a:before {
+    bottom: 5px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  a:hover:before {
+    visibility: visible;
+    width: calc(100% - 16px);
+  }
+}
+
+.footer.fancylinks {
+  a:before {
+    background-color: #fff;
+    bottom: -5px;
+  }
+}
