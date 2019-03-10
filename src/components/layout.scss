@@ -14,33 +14,28 @@ body {
 
 h1.hero {
   font-weight: 900;
-  //font-size: 8vw;
+  font-size: 60px;
   line-height: 1;
-  color:yellow;
 }
 
 @include media-breakpoint-up(sm) {
   h1.hero {
-    font-size: 8vw;
-    color:blue;
+    font-size: 60px;
   }
 }
 @include media-breakpoint-up(md) {
   h1.hero {
-    font-size: 8vw;
-    color:green;
+    font-size: 70px;
   }
 }
 @include media-breakpoint-up(lg) {
   h1.hero {
     font-size: 90px;
-    color:red;
   }
 }
 @include media-breakpoint-up(xl) {
   h1.hero {
-    font-size: 100px;
-    color:black;
+    font-size: 110px;
   }
 }
 
@@ -100,4 +95,11 @@ nav .fancylinks {
     background-color: #fff;
     bottom: -5px;
   }
+}
+
+
+h2 {
+  font-weight:900;
+  font-size:50px;
+  margin-bottom: 20px;
 }

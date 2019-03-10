@@ -25,9 +25,11 @@ const Page = ({ children, data }) => (
         href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
         rel="stylesheet"
       />
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet"></link>
     </Helmet>
 
-    <nav class="navbar navbar-expand  mb-5">
+    <nav class="navbar navbar-expand fixed-top mb-5">
       <a class="navbar-brand" href="#">
         <img src={logo} className="logo" />
       </a>
@@ -55,7 +57,7 @@ const Page = ({ children, data }) => (
 
     <div className="container mb-5">
       <div className="d-md-flex flex-row-reverse">
-        <div className="text-center">
+        <div className="text-center mb-5">
           <img src={logo} />
         </div>
         <div className="">
@@ -64,16 +66,16 @@ const Page = ({ children, data }) => (
       </div>
     </div>
 
-    <div className="container mb-5">
+    <div className="container mb-4">
       <form class="form-inline">
-        <div class="form-group mr-3">
+        <div class="form-group mr-3 mb-3">
           <input
             type="email"
             class="form-control form-control-lg"
             placeholder="E-Mail"
           />
         </div>
-        <button type="submit" class="btn btn-primary btn-lg">
+        <button type="submit" class="btn btn-primary btn-lg mb-3">
           Zum Newsletter anmelden
         </button>
       </form>
