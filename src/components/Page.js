@@ -19,7 +19,7 @@ cookie hinweis
 */
 
 const Page = ({ children, data }) => (
-  <div>
+  <div onScroll={() => console.log('scroll')}>
     <Helmet>
       <link
         href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
@@ -29,7 +29,7 @@ const Page = ({ children, data }) => (
       <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet"></link>
     </Helmet>
 
-    <nav class="navbar navbar-expand fixed-top mb-5">
+    <nav class="navbar navbar-expand fixed-top mb-5 bg-white shadow-sm">
       <a class="navbar-brand" href="#">
         <img src={logo} className="logo" />
       </a>
