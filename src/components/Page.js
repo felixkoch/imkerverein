@@ -19,35 +19,33 @@ cookie hinweis
 */
 
 const Page = ({ children, data }) => (
-  <div onScroll={() => console.log('scroll')}>
+  <div onScroll={() => console.log('scroll')} data-spy="scroll"  data-target="#navbar" style={{position: 'relative', height:200, overflowY:'scroll'}}>
     <Helmet>
       <link
         href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
         rel="stylesheet"
       />
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"></link>
-      <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet"></link>
     </Helmet>
 
-    <nav class="navbar navbar-expand fixed-top mb-5 bg-white shadow-sm">
-      <a class="navbar-brand" href="#">
+    <nav className="navbar navbar-expand fixed-top mb-5 bg-white shadow-sm" id='navbar'>
+      <a className="navbar-brand" href="#">
         <img src={logo} className="logo" />
       </a>
 
-      <div class="collapse navbar-collapse fancylinks">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
+      <div className="collapse navbar-collapse fancylinks">
+        <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li className="nav-item active">
+            <a className="nav-link" href="#neuigkeiten">
               Neuigkeiten
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <li className="nav-item">
+            <a className="nav-link" href="#verein">
               Verein
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link Kontakt" href="#">
+          <li className="nav-item">
+            <a className="nav-link Kontakt" href="#kontakt">
               Kontakt
             </a>
           </li>
@@ -67,21 +65,39 @@ const Page = ({ children, data }) => (
     </div>
 
     <div className="container mb-4">
-      <form class="form-inline">
-        <div class="form-group mr-3 mb-3">
+      <form className="form-inline">
+        <div className="form-group mr-3 mb-3">
           <input
             type="email"
-            class="form-control form-control-lg"
+            className="form-control form-control-lg"
             placeholder="E-Mail"
           />
         </div>
-        <button type="submit" class="btn btn-primary btn-lg mb-3">
+        <button type="submit" className="btn btn-primary btn-lg mb-3">
           Zum Newsletter anmelden
         </button>
       </form>
     </div>
 
-    <div className="container">
+    <div className="container" id='neuigkeiten'>
+      <h2>Neuigkeiten</h2>
+      <h3>Einladung zum Klönabend im Januar</h3>
+      <p>
+        dfasdfa ads fsad fadsf asdf sadf asdfdsf sadf asd f sdf a dsf sadf af
+        dsfasdf asdf asdf
+      </p>
+    </div>
+
+    <div className="container" id='verein'>
+      <h2>Neuigkeiten</h2>
+      <h3>Einladung zum Klönabend im Januar</h3>
+      <p>
+        dfasdfa ads fsad fadsf asdf sadf asdfdsf sadf asd f sdf a dsf sadf af
+        dsfasdf asdf asdf
+      </p>
+    </div>
+
+    <div className="container" id='kontakt'>
       <h2>Neuigkeiten</h2>
       <h3>Einladung zum Klönabend im Januar</h3>
       <p>
