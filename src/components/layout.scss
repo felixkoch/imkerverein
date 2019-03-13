@@ -10,7 +10,12 @@ body {
   position:relative;
 }
 
-
+.navbar
+{
+  margin-top:-4px;
+  padding-top: 0;
+  padding-bottom: 0px;
+}
 
 .navbar img.logo {
   width: 60px;
@@ -75,7 +80,7 @@ h1.hero {
     transition: all 0.3s ease-in-out;
   }
 
-  a:hover:before {
+  a:hover:before, a.active:before {
     visibility: visible;
     width: 100%;
   }
@@ -88,7 +93,7 @@ nav .fancylinks {
     margin-right: 8px;
   }
 
-  a:hover:before {
+  a:hover:before, a.active:before {
     visibility: visible;
     width: calc(100% - 16px);
   }
