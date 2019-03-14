@@ -1,11 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Helmet } from "react-helmet";
+
 import StaticImage from "./FixedImage";
 import Logo from "./Logo";
-import "jquery/dist/jquery.min.js";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import logo from "../images/logo.png";
+
+import Layout from "./Layout";
 /*
 sanity io
 product hunt
@@ -18,6 +17,13 @@ scrollspy
 cookie hinweis
 */
 
+const Page = ({ children, data }) => (
+  <Layout>
+    Lulu
+  </Layout>
+);
+
+/*
 const Page = ({ children, data }) => (
   <div >
     <Helmet>
@@ -147,10 +153,10 @@ Deep v single-origin coffee +1 forage, put a bird on it whatever try-hard hammoc
       />
       ;
     </div>
-      */}
+      * /}
   </div>
 );
-
+*/
 export default Page;
 
 export const pageQuery = graphql`

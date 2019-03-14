@@ -1,46 +1,144 @@
 import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import { Helmet } from "react-helmet";
+import "jquery/dist/jquery.min.js";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import logo from "../images/logo.png";
 import "./layout.scss"
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+const Layout = ({ children, data }) => (
+    <div >
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+          rel="stylesheet"
+        />
+        <body data-spy="scroll" data-target="#navbar" onscroll={() => console.log('scroll')} />
+      </Helmet>
+  
+      <nav className="navbar navbar-expand fixed-top  bg-white shadow-sm" id='navbar'>
+        <a className="navbar-brand" href="#">
+          <img src={logo} className="logo" />
+        </a>
+  
+        <div className="collapse navbar-collapse fancylinks">
+          <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li className="nav-item">
+              <a className="nav-link" href="#neuigkeiten">
+                Neuigkeiten
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#verein">
+                Verein
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link Kontakt" href="#kontakt">
+                Kontakt
+              </a>
+            </li>
+          </ul>
         </div>
-      </>
-    )}
-  />
-)
+      </nav>
+  
+    {children}
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  {/*
+      <div className="container mb-5">
+        <div className="d-md-flex flex-row-reverse">
+          <div className="text-center mb-5">
+            <img src={logo} />
+          </div>
+          <div className="">
+            <h1 className="hero">Freizeitimker Wümme-Region e.V.</h1>
+          </div>
+        </div>
+      </div>
+  
+      <div className="container mb-4">
+        <form className="form-inline">
+          <div className="form-group mr-3 mb-3">
+            <input
+              type="email"
+              className="form-control form-control-lg"
+              placeholder="E-Mail"
+            />
+          </div>
+          <button type="submit" className="btn btn-primary btn-lg mb-3">
+            Zum Newsletter anmelden
+          </button>
+        </form>
+      </div>
+  
+      <div className="container" id='neuigkeiten'>
+        <h2>Neuigkeiten</h2>
+        <h3>Einladung zum Klönabend im Januar</h3>
+        <p>
+        Lorem ipsum dolor amet slow-carb pitchfork scenester pug vegan offal, affogato small batch messenger bag plaid. Four dollar toast lyft farm-to-table pug gentrify jean shorts. Aesthetic tumblr banjo health goth sriracha trust fund swag hammock gluten-free photo booth. Bicycle rights affogato asymmetrical green juice, health goth whatever scenester schlitz cred. Pickled health goth kitsch, la croix synth DIY hoodie waistcoat.
+  
+  Salvia synth humblebrag, cardigan austin pitchfork before they sold out man braid locavore vinyl dreamcatcher gastropub kitsch try-hard. Single-origin coffee four loko YOLO before they sold out polaroid stumptown. Williamsburg tofu artisan intelligentsia XOXO tilde glossier narwhal VHS kombucha. VHS semiotics 90's pok pok pickled direct trade. Drinking vinegar green juice jean shorts aesthetic, tacos scenester selfies pinterest mumblecore. Cliche trust fund DIY biodiesel, pork belly meggings kale chips PBR&B aesthetic cloud bread tumblr letterpress fashion axe hammock.
+  
+  Deep v single-origin coffee +1 forage, put a bird on it whatever try-hard hammock XOXO. Pitchfork chicharrones raclette helvetica. Affogato fanny pack gochujang flexitarian, pinterest williamsburg mixtape offal banh mi direct trade. Put a bird on it readymade vinyl chartreuse tilde waistcoat PBR&B.
+        </p>
+      </div>
+  
+      <div className="container" id='verein'>
+        <h2>Neuigkeiten</h2>
+        <h3>Einladung zum Klönabend im Januar</h3>
+        <p>
+        Lorem ipsum dolor amet slow-carb pitchfork scenester pug vegan offal, affogato small batch messenger bag plaid. Four dollar toast lyft farm-to-table pug gentrify jean shorts. Aesthetic tumblr banjo health goth sriracha trust fund swag hammock gluten-free photo booth. Bicycle rights affogato asymmetrical green juice, health goth whatever scenester schlitz cred. Pickled health goth kitsch, la croix synth DIY hoodie waistcoat.
+  
+  Salvia synth humblebrag, cardigan austin pitchfork before they sold out man braid locavore vinyl dreamcatcher gastropub kitsch try-hard. Single-origin coffee four loko YOLO before they sold out polaroid stumptown. Williamsburg tofu artisan intelligentsia XOXO tilde glossier narwhal VHS kombucha. VHS semiotics 90's pok pok pickled direct trade. Drinking vinegar green juice jean shorts aesthetic, tacos scenester selfies pinterest mumblecore. Cliche trust fund DIY biodiesel, pork belly meggings kale chips PBR&B aesthetic cloud bread tumblr letterpress fashion axe hammock.
+  
+  Deep v single-origin coffee +1 forage, put a bird on it whatever try-hard hammock XOXO. Pitchfork chicharrones raclette helvetica. Affogato fanny pack gochujang flexitarian, pinterest williamsburg mixtape offal banh mi direct trade. Put a bird on it readymade vinyl chartreuse tilde waistcoat PBR&B.
+        </p>
+      </div>
+  
+      <div className="container" id='kontakt'>
+        <h2>Neuigkeiten</h2>
+        <h3>Einladung zum Klönabend im Januar</h3>
+        <p>
+        Lorem ipsum dolor amet slow-carb pitchfork scenester pug vegan offal, affogato small batch messenger bag plaid. Four dollar toast lyft farm-to-table pug gentrify jean shorts. Aesthetic tumblr banjo health goth sriracha trust fund swag hammock gluten-free photo booth. Bicycle rights affogato asymmetrical green juice, health goth whatever scenester schlitz cred. Pickled health goth kitsch, la croix synth DIY hoodie waistcoat.
+  
+  Salvia synth humblebrag, cardigan austin pitchfork before they sold out man braid locavore vinyl dreamcatcher gastropub kitsch try-hard. Single-origin coffee four loko YOLO before they sold out polaroid stumptown. Williamsburg tofu artisan intelligentsia XOXO tilde glossier narwhal VHS kombucha. VHS semiotics 90's pok pok pickled direct trade. Drinking vinegar green juice jean shorts aesthetic, tacos scenester selfies pinterest mumblecore. Cliche trust fund DIY biodiesel, pork belly meggings kale chips PBR&B aesthetic cloud bread tumblr letterpress fashion axe hammock.
+  
+  Deep v single-origin coffee +1 forage, put a bird on it whatever try-hard hammock XOXO. Pitchfork chicharrones raclette helvetica. Affogato fanny pack gochujang flexitarian, pinterest williamsburg mixtape offal banh mi direct trade. Put a bird on it readymade vinyl chartreuse tilde waistcoat PBR&B.
+        </p>
+              <p>
+        Lorem ipsum dolor amet slow-carb pitchfork scenester pug vegan offal, affogato small batch messenger bag plaid. Four dollar toast lyft farm-to-table pug gentrify jean shorts. Aesthetic tumblr banjo health goth sriracha trust fund swag hammock gluten-free photo booth. Bicycle rights affogato asymmetrical green juice, health goth whatever scenester schlitz cred. Pickled health goth kitsch, la croix synth DIY hoodie waistcoat.
+  
+  Salvia synth humblebrag, cardigan austin pitchfork before they sold out man braid locavore vinyl dreamcatcher gastropub kitsch try-hard. Single-origin coffee four loko YOLO before they sold out polaroid stumptown. Williamsburg tofu artisan intelligentsia XOXO tilde glossier narwhal VHS kombucha. VHS semiotics 90's pok pok pickled direct trade. Drinking vinegar green juice jean shorts aesthetic, tacos scenester selfies pinterest mumblecore. Cliche trust fund DIY biodiesel, pork belly meggings kale chips PBR&B aesthetic cloud bread tumblr letterpress fashion axe hammock.
+  
+  Deep v single-origin coffee +1 forage, put a bird on it whatever try-hard hammock XOXO. Pitchfork chicharrones raclette helvetica. Affogato fanny pack gochujang flexitarian, pinterest williamsburg mixtape offal banh mi direct trade. Put a bird on it readymade vinyl chartreuse tilde waistcoat PBR&B.
+        </p>
+      </div>
+   */}
+      <div className="footer pt-3 pb-3 fancylinks">
+        <div className="container">
+          <ul>
+            <li>
+              <a href="#">Datenschutz</a>
+            </li>
+            <li>
+              <a href="#">Impressum</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+ 
+      {/*}
+      <div>
+        {data.contentfulPage.title}
+        <br />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: data.contentfulPage.body.childContentfulRichText.html
+          }}
+        />
+        ;
+      </div>
+        */}
+    </div>
+  );
 
-export default Layout
+  export default Layout;
