@@ -8,7 +8,11 @@ import { graphql } from 'gatsby'
 //import Image from "../components/image"
 //import SEO from "../components/seo"
 
-const IndexPage = (data) => (
+const IndexPage = ({data}) => {
+  console.log('DingDing')
+  const node = data.allContentfulStartseite.edges[0].node
+  console.log(node)
+  return (
   <Layout>
     <div className="container mb-5">
       <div className="d-md-flex flex-row-reverse">
@@ -35,35 +39,41 @@ const IndexPage = (data) => (
         </button>
       </form>
     </div>
-    {
-      data.contentfulStartseiteNeuigkeitenRichTextNode
-    }
+
   </Layout>
-);
+)};
+export default IndexPage;
 
 export const query = graphql`
-  query HomePageQuery {
-    contentfulStartseiteNeuigkeitenRichTextNode {
-      childContentfulRichText {
-        html
-      }
-    }
-    contentfulStartseiteKontaktRichTextNode {
-      childContentfulRichText {
-        html
-      }
-    }
-    contentfulStartseiteVereinRichTextNode {
-      childContentfulRichText {
-        html
-      }
-    }
-    contentfulStartseiteFaqRichTextNode {
-      childContentfulRichText {
-        html
+query HomePageQuery {
+  allContentfulStartseite(limit: 1) {
+    edges {
+      node {
+        neuigkeiten {
+          childContentfulRichText {
+            html
+          }
+        }
+        kontakt {
+          childContentfulRichText {
+            html
+          }
+        }
+        verein {
+          childContentfulRichText {
+            html
+          }
+        }
+        faq {
+          childContentfulRichText {
+            html
+          }
+        }
       }
     }
   }
+}
+
 `;
 
-export default IndexPage;
+
