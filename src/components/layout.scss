@@ -7,12 +7,11 @@ $body-color: #000;
 body {
   //background:red;
   padding-top: 120px;
-  position:relative;
+  position: relative;
 }
 
-.navbar
-{
-  margin-top:-4px;
+.navbar {
+  margin-top: -4px;
   padding-top: 0;
   padding-bottom: 0px;
 }
@@ -55,6 +54,10 @@ h1.hero {
   ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    li {
+      margin-right: 20px;
+    }
   }
 
   a {
@@ -72,7 +75,7 @@ h1.hero {
     content: "";
     position: absolute;
     width: 0%;
-    height: 4px;
+    height: 3px;
     bottom: 0;
     left: 0;
     background-color: $primary;
@@ -80,7 +83,8 @@ h1.hero {
     transition: all 0.3s ease-in-out;
   }
 
-  a:hover:before, a.active:before {
+  a:hover:before,
+  a.active:before {
     visibility: visible;
     width: 100%;
   }
@@ -93,7 +97,8 @@ nav .fancylinks {
     margin-right: 8px;
   }
 
-  a:hover:before, a.active:before {
+  a:hover:before,
+  a.active:before {
     visibility: visible;
     width: calc(100% - 16px);
   }
@@ -106,9 +111,17 @@ nav .fancylinks {
   }
 }
 
+.positionrelative {
+  position: relative;
+}
+
+a.anchor {
+  position: absolute;
+  top: -100px;
+}
 
 h2 {
-  font-weight:900;
-  font-size:50px;
+  font-weight: 900;
+  font-size: 50px;
   margin-bottom: 20px;
 }
