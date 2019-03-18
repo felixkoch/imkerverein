@@ -48,8 +48,7 @@ const IndexPage = ({ data }) => {
         </form>
       </div>
       {sections.map(section => (
-        <div className="container mb-5 positionrelative fancylinks">
-          <a id={section[0]} className='anchor'></a>
+        <div id={section[0]} className="container mb-5 positionrelative fancylinks section">
           <h2>{section[1]}</h2>
           <div
             dangerouslySetInnerHTML={{

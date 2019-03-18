@@ -12,7 +12,7 @@ const Layout = ({ children, data }) => (
           href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
           rel="stylesheet"
         />
-        <body data-spy="scroll" data-target="#navbar" onscroll={() => console.log('scroll')} />
+        <body data-spy="scroll" data-target="#navbar" data-offset="200" />
       </Helmet>
   
       <nav className="navbar navbar-expand fixed-top  bg-white shadow-sm" id='navbar'>

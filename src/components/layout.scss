@@ -111,13 +111,11 @@ nav .fancylinks {
   }
 }
 
-.positionrelative {
-  position: relative;
-}
 
-a.anchor {
-  position: absolute;
-  top: -100px;
+
+div.section {
+  padding-top:80px;
+  margin-top:-80px;
 }
 
 h2 {
