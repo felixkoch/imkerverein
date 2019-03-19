@@ -1,5 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet";
+import { Link } from "gatsby"
+
 import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import logo from "../images/logo.png";
@@ -23,9 +25,7 @@ const Layout = ({ children, data }) => (
         <div className="collapse navbar-collapse fancylinks">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             <li className="nav-item">
-              <a className="nav-link" href="#neuigkeiten">
-                Neuigkeiten
-              </a>
+               <Link to='#neuigkeiten' className='nav-link' >Neuigkeiten</Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#verein">
@@ -117,10 +117,10 @@ const Layout = ({ children, data }) => (
         <div className="container">
           <ul>
             <li>
-              <a href="#">Datenschutz</a>
+              <Link to='/datenschutz'>Datenschutz</Link>
             </li>
             <li>
-              <a href="#">Impressum</a>
+              <Link to='/impressum'>Impressum</Link>
             </li>
           </ul>
         </div>
