@@ -1,14 +1,20 @@
-import React from "react"
+import React from "react";
 import { Helmet } from "react-helmet";
-import { Link } from "gatsby"
+import { Link } from "gatsby";
+import { withPrefix } from "gatsby";
 
 import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import logo from "../images/logo.png";
-import "./layout.scss"
+import "./layout.scss";
 
-const Layout = ({ children, data }) => (
-    <div >
+import sections from "./sections";
+
+const Layout = props => {
+  console.log(props);
+  //const isHomepage = location.pathname === withPrefix("/");
+  return (
+    <div>
       <Helmet>
         <link
           href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
@@ -16,34 +22,38 @@ const Layout = ({ children, data }) => (
         />
         <body data-spy="scroll" data-target="#navbar" data-offset="200" />
       </Helmet>
-  
-      <nav className="navbar navbar-expand fixed-top  bg-white shadow-sm" id='navbar'>
+
+      <nav
+        className="navbar navbar-expand fixed-top  bg-white shadow-sm"
+        id="navbar"
+      >
         <a className="navbar-brand" href="#">
           <img src={logo} className="logo" />
         </a>
-  
+
         <div className="collapse navbar-collapse fancylinks">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li className="nav-item">
-               <Link to='#neuigkeiten' className='nav-link' >Neuigkeiten</Link>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#verein">
-                Verein
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link Kontakt" href="#kontakt">
-                Kontakt
-              </a>
-            </li>
+            {sections.map(section => (
+              <li className="nav-item" key={section[0]}>
+                {props.index == true ? (
+                  <a className="nav-link" href={"#"+section[0]}>
+                    {section[1]}
+                  </a>
+                ) : (
+                  <Link to={"/#"+section[0]} className="nav-link">
+                    {section[1]}
+                  </Link>
+                )}
+              </li>
+            ))}
+
           </ul>
         </div>
       </nav>
-  
-    {children}
 
-  {/*
+      {props.children}
+
+      {/*
       <div className="container mb-5">
         <div className="d-md-flex flex-row-reverse">
           <div className="text-center mb-5">
@@ -117,15 +127,15 @@ const Layout = ({ children, data }) => (
         <div className="container">
           <ul>
             <li>
-              <Link to='/datenschutz'>Datenschutz</Link>
+              <Link to="/datenschutz">Datenschutz</Link>
             </li>
             <li>
-              <Link to='/impressum'>Impressum</Link>
+              <Link to="/impressum">Impressum</Link>
             </li>
           </ul>
         </div>
       </div>
- 
+
       {/*}
       <div>
         {data.contentfulPage.title}
@@ -140,5 +150,6 @@ const Layout = ({ children, data }) => (
         */}
     </div>
   );
+};
 
-  export default Layout;
+export default Layout;

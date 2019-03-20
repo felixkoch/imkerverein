@@ -8,20 +8,15 @@ import { graphql } from "gatsby";
 //import Image from "../components/image"
 //import SEO from "../components/seo"
 
-const IndexPage = ({ data }) => {
+import sections from "../components/sections";
+
+const IndexPage = ({ data, location }) => {
   console.log("DingDing");
   const node = data.allContentfulStartseite.edges[0].node;
-  console.log(node);
-
-  const sections = [
-    ["neuigkeiten", "Neuigkeiten"],
-    ["kontakt", "Kontakt"],
-    ["verein", "Verein"],
-    ["faq", "FAQ"]
-  ];
+  console.log(location);
 
   return (
-    <Layout>
+    <Layout index={true}>
       <div className="container mb-5">
         <div className="d-md-flex flex-row-reverse">
           <div className="text-center mb-5">
