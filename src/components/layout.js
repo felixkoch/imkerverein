@@ -5,10 +5,12 @@ import { withPrefix } from "gatsby";
 
 import "jquery/dist/jquery.min.js";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "cookieconsent"
 import logo from "../images/logo.png";
 import "./layout.scss";
 
 import sections from "./sections";
+import "./consent"
 
 const Layout = props => {
   console.log(props);
@@ -20,6 +22,9 @@ const Layout = props => {
           href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
           rel="stylesheet"
         />
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+        
+        
         <body data-spy="scroll" data-target="#navbar" data-offset="200" />
       </Helmet>
 
@@ -148,6 +153,7 @@ const Layout = props => {
         ;
       </div>
         */}
+        
     </div>
   );
 };
