@@ -3,55 +3,45 @@ import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 import { withPrefix } from "gatsby";
 
-import "jquery/dist/jquery.min.js";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "cookieconsent"
+import "cookieconsent/build/cookieconsent.min.css";
+import "cookieconsent";
 import logo from "../images/logo.png";
 import "./layout.scss";
 
 import sections from "./sections";
-import "./consent"
+import "./consent";
+import SEO from "./seo"
 
 const Layout = props => {
   console.log(props);
   //const isHomepage = location.pathname === withPrefix("/");
   return (
     <div>
+      <SEO title={props.title} />
       <Helmet>
         <link
           href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
           rel="stylesheet"
         />
-        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-        
-        
-        <body data-spy="scroll" data-target="#navbar" data-offset="200" />
       </Helmet>
 
       <nav
         className="navbar navbar-expand fixed-top  bg-white shadow-sm"
         id="navbar"
       >
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           <img src={logo} className="logo" />
-        </a>
+        </Link>
 
         <div className="collapse navbar-collapse fancylinks">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             {sections.map(section => (
               <li className="nav-item" key={section[0]}>
-                {props.index == true ? (
-                  <a className="nav-link" href={"#"+section[0]}>
-                    {section[1]}
-                  </a>
-                ) : (
-                  <Link to={"/#"+section[0]} className="nav-link">
-                    {section[1]}
-                  </Link>
-                )}
+                <Link to={"/#" + section[0]} className="nav-link">
+                  {section[1]}
+                </Link>
               </li>
             ))}
-
           </ul>
         </div>
       </nav>
@@ -153,7 +143,6 @@ const Layout = props => {
         ;
       </div>
         */}
-        
     </div>
   );
 };

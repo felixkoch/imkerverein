@@ -16,7 +16,7 @@ const IndexPage = ({ data, location }) => {
   console.log(location);
 
   return (
-    <Layout index={true}>
+    <Layout title="Startseite" >
       <div className="container mb-5">
         <div className="d-md-flex flex-row-reverse">
           <div className="text-center mb-5">
