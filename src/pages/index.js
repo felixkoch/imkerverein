@@ -1,12 +1,8 @@
 import React from "react";
-import { Link } from "gatsby";
 
 import Layout from "../components/Layout";
 import logo from "../images/logo.png";
 import { graphql } from "gatsby";
-
-//import Image from "../components/image"
-//import SEO from "../components/seo"
 
 import sections from "../components/sections";
 
@@ -20,7 +16,7 @@ const IndexPage = ({ data, location }) => {
       <div className="container mb-5">
         <div className="d-md-flex flex-row-reverse">
           <div className="text-center mb-5">
-            <img src={logo} />
+            <img src={logo} alt='Logo' />
           </div>
           <div className="">
             <h1 className="hero">Freizeitimker Wümme-Region e.V.</h1>

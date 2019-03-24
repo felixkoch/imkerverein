@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
-import { withPrefix } from "gatsby";
 
 import "cookieconsent/build/cookieconsent.min.css";
 import "cookieconsent";
@@ -30,7 +29,7 @@ const Layout = props => {
         id="navbar"
       >
         <Link className="navbar-brand" to="/">
-          <img src={logo} className="logo" />
+          <img src={logo} className="logo" alt="Logo" />
         </Link>
 
         <div className="collapse navbar-collapse fancylinks">

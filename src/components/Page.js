@@ -1,9 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
 
-import StaticImage from "./FixedImage";
-import Logo from "./Logo";
-
 import Layout from "./Layout";
 /*
 sanity io
