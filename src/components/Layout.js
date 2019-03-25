@@ -3,13 +3,22 @@ import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 
 import "cookieconsent/build/cookieconsent.min.css";
-import "cookieconsent";
+
 import logo from "../images/logo.png";
 import "./layout.scss";
 
 import sections from "./sections";
-import "./consent";
 import SEO from "./seo"
+
+if (typeof window !== `undefined`) {
+  //import "cookieconsent";
+  //import "./consent";
+
+  const cookieconsent = require("cookieconsent")
+  require("./consent")
+}
+
+
 
 const Layout = props => {
   console.log(props);
