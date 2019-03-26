@@ -15,8 +15,14 @@ cookie hinweis
 */
 
 const Page = ({ children, data }) => (
-  <Layout>
-    Lulu
+  <Layout title={data.contentfulPage.title}>
+    <div className="container">
+      <div
+        dangerouslySetInnerHTML={{
+          __html: data.contentfulPage.body.childContentfulRichText.html
+        }}
+      />
+    </div>
   </Layout>
 );
 

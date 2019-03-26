@@ -14,7 +14,7 @@ if (typeof window !== `undefined`) {
   //import "cookieconsent";
   //import "./consent";
 
-  const cookieconsent = require("cookieconsent")
+  require("cookieconsent")
   require("./consent")
 }
 

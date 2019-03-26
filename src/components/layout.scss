@@ -55,9 +55,18 @@ h1.hero {
     list-style-type: none;
     padding: 0;
     display: flex;
+    margin-top: 1rem;
     li {
       margin-right: 20px;
+      padding-right: 20px;
+      border-right: 1px solid #fff;
     }
+
+    li:last-child
+    {
+      border-right:0;
+    }
+
   }
 
   a {
@@ -105,6 +114,7 @@ nav .fancylinks {
 }
 
 .footer.fancylinks {
+
   a:before {
     background-color: #fff;
     bottom: -5px;
