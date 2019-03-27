@@ -1,0 +1,1 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2fb837cd-46bc-4fbd-9b06-60e19258abdb/deploy-status)](https://app.netlify.com/sites/freizeitimker-wuemme-region/deploys)

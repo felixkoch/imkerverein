@@ -78,6 +78,10 @@ module.exports = {
                 node.data.target.fields.name['en-US']
               }</div>`
             },
+
+          
+            ["paragraph"]: (node, next) => `<p>${next(node.content).replace(/\n/g, `</br>`)}</p>`
+
           },
         },
       },
