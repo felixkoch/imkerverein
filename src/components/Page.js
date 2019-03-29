@@ -6,7 +6,7 @@ import Layout from "./Layout";
 
 const Page = ({ children, data }) => (
   <Layout title={data.contentfulPage.title}>
-    <div className="container">
+    <div className="container page">
       <div
         dangerouslySetInnerHTML={{
           __html: data.contentfulPage.body.childContentfulRichText.html
