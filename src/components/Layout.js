@@ -2,23 +2,24 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 
+import "jquery/dist/jquery.min.js";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 import "cookieconsent/build/cookieconsent.min.css";
 
 import logo from "../images/logo.png";
 import "./layout.scss";
 
 import sections from "./sections";
-import SEO from "./seo"
+import SEO from "./seo";
 
 if (typeof window !== `undefined`) {
   //import "cookieconsent";
   //import "./consent";
 
-  require("cookieconsent")
-  require("./consent")
+  require("cookieconsent");
+  require("./consent");
 }
-
-
 
 const Layout = props => {
   console.log(props);
@@ -34,18 +35,33 @@ const Layout = props => {
       </Helmet>
 
       <nav
-        className="navbar navbar-expand fixed-top  bg-white shadow-sm"
+        className="navbar navbar-expand-sm fixed-top bg-white navbar-light shadow-sm"
         id="navbar"
       >
         <Link className="navbar-brand" to="/">
           <img src={logo} className="logo" alt="Logo" />
         </Link>
 
-        <div className="collapse navbar-collapse fancylinks">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon" />
+        </button>
+
+        <div
+          className="collapse navbar-collapse fancylinks"
+          id="navbarTogglerDemo02"
+        >
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             {sections.map(section => (
-              <li className="nav-item" key={section[0]}>
-                <Link to={"/#" + section[0]} className="nav-link">
+              <li className="nav-item" key={section[0]} data-toggle="collapse" data-target=".navbar-collapse.show">
+                <Link to={"/#" + section[0]} className="nav-link" >
                   {section[1]}
                 </Link>
               </li>
