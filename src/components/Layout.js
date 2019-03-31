@@ -2,8 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 
-import "jquery/dist/jquery.min.js";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 
 import "cookieconsent/build/cookieconsent.min.css";
 
