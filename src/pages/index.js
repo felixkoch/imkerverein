@@ -32,9 +32,9 @@ const IndexPage = ({ data, location }) => {
       </div>
 
       <div className="container mb-5">
-        <form onSubmit={handleSubmit} className="form-inline align-items-start">
-          <div className="form-group mr-3 mb-3">
-            <div>
+        <form onSubmit={handleSubmit} className="d-md-flex align-items-start">
+          <div className=" mr-3 mb-3">
+            <div className="form-group">
             <input
               type="email"
               name='email'
@@ -42,8 +42,8 @@ const IndexPage = ({ data, location }) => {
               placeholder="E-Mail"
             />
             
-            <div class="valid-feedback">
-              Vielen Dank für die Anmeldung.
+            <div class="valid-feedback ">
+              Vielen Dank für Ihre Anmeldung.
             </div>
             </div>
           </div>
