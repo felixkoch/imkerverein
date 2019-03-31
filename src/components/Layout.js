@@ -2,7 +2,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 
-
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
 import "cookieconsent/build/cookieconsent.min.css";
 
@@ -23,6 +24,8 @@ if (typeof window !== `undefined`) {
 const Layout = props => {
   console.log(props);
   //const isHomepage = location.pathname === withPrefix("/");
+  //              {/*<Nav.Link key={section[0]} href={"/#" + section[0]} data-toggle="collapse" data-target=".navbar-collapse.show" >{section[1]}</Nav.Link>*/}
+
   return (
     <div>
       <SEO title={props.title} />
@@ -32,7 +35,19 @@ const Layout = props => {
           rel="stylesheet"
         />
       </Helmet>
-
+      <Navbar bg="white" expand="lg" fixed="top" collapseOnSelect={true} className="shadow-sm">
+        <Navbar.Brand href="/"><img src={logo} className="logo" alt="Logo" /></Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+          {sections.map(section => (
+            <Nav.Link key={section[0]} href={"/#" + section[0]}  >{section[1]}</Nav.Link>
+            ))}
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      
+      {/*
       <nav
         className="navbar navbar-expand-sm fixed-top bg-white navbar-light shadow-sm"
         id="navbar"
@@ -68,9 +83,8 @@ const Layout = props => {
           </ul>
         </div>
       </nav>
-
+            */}
       {props.children}
-
       {/*
       <div className="container mb-5">
         <div className="d-md-flex flex-row-reverse">
@@ -153,7 +167,6 @@ const Layout = props => {
           </ul>
         </div>
       </div>
-
       {/*}
       <div>
         {data.contentfulPage.title}
