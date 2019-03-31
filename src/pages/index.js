@@ -3,13 +3,20 @@ import React from "react";
 import Layout from "../components/Layout";
 import logo from "../images/logo.png";
 import { graphql } from "gatsby";
-
+import addToMailchimp from 'gatsby-plugin-mailchimp'
 import sections from "../components/sections";
+
+
 
 const IndexPage = ({ data, location }) => {
   console.log("DingDing");
   const node = data.allContentfulStartseite.edges[0].node;
   console.log(location);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target.email.value) 
+  }
 
   return (
     <Layout title="Startseite" >
@@ -25,13 +32,20 @@ const IndexPage = ({ data, location }) => {
       </div>
 
       <div className="container mb-5">
-        <form className="form-inline">
+        <form onSubmit={handleSubmit} className="form-inline align-items-start">
           <div className="form-group mr-3 mb-3">
+            <div>
             <input
               type="email"
-              className="form-control form-control-lg"
+              name='email'
+              className="form-control form-control-lg is-valid"
               placeholder="E-Mail"
             />
+            
+            <div class="valid-feedback">
+              Vielen Dank für die Anmeldung.
+            </div>
+            </div>
           </div>
           <button type="submit" className="btn btn-primary btn-lg mb-3">
             Zum Newsletter anmelden
