@@ -35,7 +35,7 @@ const IndexPage = ({ data, location }) => {
             <div class="col-sm">
               <div className="form-group">
                 <input
-                  type="email"
+                  type="text"
                   name="email"
                   className="form-control form-control-lg is-valid"
                   placeholder="E-Mail"
