@@ -61,6 +61,11 @@ h1.hero {
   }
 }
 
+.was-validated .form-control:valid, .form-control.is-valid{
+  background-position:center right calc(0.375em + 0.1875rem);
+}
+
+
 .footer {
   background: $primary;
   margin-top: 200px;
