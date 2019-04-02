@@ -1,19 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Layout from "../components/Layout";
 import logo from "../images/logo.png";
 import { graphql } from "gatsby";
 import addToMailchimp from "gatsby-plugin-mailchimp";
 import sections from "../components/sections";
+import EmailValidator from "email-validator";
+import classNames from "classnames"
 
 const IndexPage = ({ data, location }) => {
   console.log("DingDing");
   const node = data.allContentfulStartseite.edges[0].node;
   console.log(location);
 
+  const [email, setEmail] = useState("");
+  const [valid, setValid] = useState(null);
+  const [success, setSuccess] = useState(false);
+
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(e.target.email.value);
+    console.log(email);
+
+    const v = EmailValidator.validate(email);
+    setValid(v);
+    setSuccess(v)
   };
 
   return (
@@ -37,13 +47,16 @@ const IndexPage = ({ data, location }) => {
                 <input
                   type="text"
                   name="email"
-                  className="form-control form-control-lg is-valid"
+                  className={classNames("form-control form-control-lg", {"is-valid" : success})}
                   placeholder="E-Mail"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                 />
-
-                <div class="valid-feedback ">
-                  Vielen Dank für Ihre Anmeldung.
-                </div>
+                {success && (
+                  <div class="valid-feedback ">
+                    Vielen Dank für Ihre Anmeldung.
+                  </div>
+                )}
               </div>
             </div>
             <div class="col-sm">

@@ -10,6 +10,11 @@ body {
   position: relative;
 }
 
+::selection {
+  color: #fff; 
+  background: $primary;
+}
+
 .navbar {
   margin-top: -4px;
   padding-top: 0;
