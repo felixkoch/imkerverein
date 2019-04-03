@@ -6,7 +6,7 @@ import { graphql } from "gatsby";
 import addToMailchimp from "gatsby-plugin-mailchimp";
 import sections from "../components/sections";
 import EmailValidator from "email-validator";
-import classNames from "classnames"
+import classNames from "classnames";
 
 const IndexPage = ({ data, location }) => {
   console.log("DingDing");
@@ -23,7 +23,16 @@ const IndexPage = ({ data, location }) => {
 
     const v = EmailValidator.validate(email);
     setValid(v);
-    setSuccess(v)
+    setSuccess(false);
+    if(v)
+    {
+      setSuccess(true);
+      addToMailchimp(email).then(data => {
+        // I recommend setting data to React state
+        // but you can do whatever you want (including ignoring this `then()` altogether)
+        console.log(data)
+      })
+    }
   };
 
   return (
@@ -41,25 +50,31 @@ const IndexPage = ({ data, location }) => {
 
       <div className="container mb-5">
         <form onSubmit={handleSubmit} className="">
-          <div class="row">
-            <div class="col-sm">
+          <div className="row">
+            <div className="col-sm">
               <div className="form-group">
                 <input
                   type="text"
                   name="email"
-                  className={classNames("form-control form-control-lg", {"is-valid" : success})}
+                  className={classNames("form-control form-control-lg", {
+                    "is-valid": success,
+                    "is-invalid": valid === false,
+                  })}
                   placeholder="E-Mail"
                   value={email}
-                  onChange={e => setEmail(e.target.value)}
+                  onChange={e => {setEmail(e.target.value);setValid(null); setSuccess(false)}}
                 />
+                {valid === false && (
+                  <div className="invalid-feedback">Bitte geben Sie eine gültige E-Mail Adresse ein.</div>
+                )}
                 {success && (
-                  <div class="valid-feedback ">
+                  <div className="valid-feedback ">
                     Vielen Dank für Ihre Anmeldung.
                   </div>
                 )}
               </div>
             </div>
-            <div class="col-sm">
+            <div className="col-sm">
               <button type="submit" className="btn btn-primary btn-lg mb-3">
                 Zum Newsletter anmelden
               </button>
@@ -70,6 +85,7 @@ const IndexPage = ({ data, location }) => {
       {sections.map(section => (
         <div
           id={section[0]}
+          key={section[0]}
           className="container mb-5 positionrelative fancylinks section"
         >
           <h2>{section[1]}</h2>

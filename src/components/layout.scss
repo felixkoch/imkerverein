@@ -4,6 +4,10 @@ $body-color: #000;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+html {
+  background: $primary;
+}
+
 body {
   //background:red;
   padding-top: 120px;
@@ -66,7 +70,9 @@ h1.hero {
   }
 }
 
-.was-validated .form-control:valid, .form-control.is-valid{
+.was-validated .form-control:valid, .form-control.is-valid,
+.was-validated .form-control:invalid, .form-control.is-invalid
+{
   background-position-x: 95%;
   background-position-y: center;
 }
