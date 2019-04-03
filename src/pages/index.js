@@ -36,7 +36,7 @@ const IndexPage = ({ data, location }) => {
   };
 
   return (
-    <Layout title="Startseite">
+    <Layout title="Startseite" banner={node.banner.childContentfulRichText.html}>
       <div className="container mb-5">
         <div className="d-md-flex flex-row-reverse">
           <div className="text-center mb-5">
@@ -106,7 +106,7 @@ export const query = graphql`
     allContentfulStartseite(limit: 1) {
       edges {
         node {
-          neuigkeiten {
+          banner {
             childContentfulRichText {
               html
             }

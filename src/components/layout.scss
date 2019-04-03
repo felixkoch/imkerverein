@@ -10,7 +10,7 @@ html {
 
 body {
   //background:red;
-  padding-top: 120px;
+  //padding-top: 120px;
   position: relative;
 }
 
@@ -41,6 +41,17 @@ body {
 .navbar-toggler-icon
 {
   color: $primary;
+}
+
+#banner {
+  position: sticky;
+  background: $primary;
+  color:white;
+  padding: 10px 20px 14px 20px;
+
+  p {
+    margin:0;
+  }
 }
 
 h1.hero {

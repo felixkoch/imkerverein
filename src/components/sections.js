@@ -1,5 +1,5 @@
 const sections = [
-    ["neuigkeiten", "Neuigkeiten"],
+    //["neuigkeiten", "Neuigkeiten"],
     ["kontakt", "Kontakt"],
     ["verein", "Verein"],
     ["faq", "FAQ"]
