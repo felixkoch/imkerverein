@@ -34,7 +34,6 @@ const Layout = props => {
           href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
           rel="stylesheet"
         />
-        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
       </Helmet>
       {props.banner && (
         <div id="banner" dangerouslySetInnerHTML={{
