@@ -1,9 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+//import Navbar from "react-bootstrap/Navbar";
+//import Nav from "react-bootstrap/Nav";
+
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 
 import "cookieconsent/build/cookieconsent.min.css";
 
@@ -26,6 +36,12 @@ const Layout = props => {
   //const isHomepage = location.pathname === withPrefix("/");
   //              {/*<Nav.Link key={section[0]} href={"/#" + section[0]} data-toggle="collapse" data-target=".navbar-collapse.show" >{section[1]}</Nav.Link>*/}
 
+  const [open, setOpen] = useState(false)
+
+  const toggle = () => {
+    setOpen(!open)
+  }
+
   return (
     <div>
       <SEO title={props.title} />
@@ -36,11 +52,38 @@ const Layout = props => {
         />
       </Helmet>
       {props.banner && (
-        <div id="banner" dangerouslySetInnerHTML={{
-          __html: props.banner
-        }}>
-        </div>
+        <div
+          id="banner"
+          dangerouslySetInnerHTML={{
+            __html: props.banner
+          }}
+        />
       )}
+
+      <Navbar
+        light
+        color="white"
+        expand="sm"
+        sticky="top"
+        collapseOnSelect={true}
+        className="shadow-sm"
+      >
+        <NavbarBrand href="/">
+          <img src={logo} className="logo" alt="Logo" />
+        </NavbarBrand>
+        <NavbarToggler onClick={toggle} aria-controls="basic-navbar-nav"/>
+        <Collapse isOpen={open} navbar>
+          <Nav className="mr-auto" navbar>
+            {sections.map(section => (
+              <NavItem key={section[0]}>
+                <NavLink href={"/#" + section[0]} onClick={toggle}>{section[1]}</NavLink>
+              </NavItem>
+            ))}
+          </Nav>
+        </Collapse>
+      </Navbar>
+
+      {/*
       <Navbar
         bg="white"
         expand="sm"
@@ -62,7 +105,7 @@ const Layout = props => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-
+      */}
       <div className="mt-5">{props.children}</div>
 
       <div className="footer pt-3 pb-3 fancylinks">
